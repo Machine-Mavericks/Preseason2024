@@ -65,8 +65,8 @@ public class OI {
     public static DoubleSupplier leftDriveSupplier = () -> {
         double raw = 0;
         // TODO: Uncomment control type you prefer
-        raw = leftJoystick.getY();
-        // raw = driverController.getLeftY();
+        //raw = leftJoystick.getY();
+        raw = driverController.getLeftY();
         return processDriveInput(raw);
     };
 
@@ -78,8 +78,8 @@ public class OI {
     public static DoubleSupplier rightDriveSupplier = () -> {
         double raw = 0;
         // TODO: Uncomment control type you prefer
-        raw = rightJoystick.getY();
-        // raw = driverController.getRightY();
+        //raw = rightJoystick.getY();
+        raw = driverController.getRightY();
         return processDriveInput(raw);
     };
 
