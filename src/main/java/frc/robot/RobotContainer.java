@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.DriveCommand;
+import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.OutakeCommand;
 import frc.robot.commands.instant.ExampleButtonCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
@@ -29,7 +31,6 @@ public class RobotContainer {
     // Configure default commands (there's some debate about where this should be done)
     // For drivetrain, use a DriveCommand with the suppliers from OI
     drivetrain.setDefaultCommand(new DriveCommand(drivetrain, OI.leftDriveSupplier, OI.rightDriveSupplier));
-
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -43,7 +44,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     // Make the ExampleButtonCommand run each time the example button is pressed
     OI.exampleButton.whileTrue(new ExampleButtonCommand());
-    
+    OI.intakeButton.whileTrue(new IntakeCommand());
+    OI.outakeButton.whileTrue(new OutakeCommand());
     // TODO: Add your button bindings here    
   }
 
