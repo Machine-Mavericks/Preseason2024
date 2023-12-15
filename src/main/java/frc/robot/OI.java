@@ -28,10 +28,8 @@ public class OI {
     /** Buttons on the driver sticks/controller */
     private static class DriverButtons {
         /** The one great button */
-        public static final JoystickButton intake_button = new JoystickButton(driverController, XboxController.Button.kY.value);
-
-
-        
+        private static final Button INTAKE = XboxController.Button.kX;
+        private static final Button OUTAKE = XboxController.Button.kY;
     }
 
     /** Buttons on the operator controller */
@@ -47,9 +45,9 @@ public class OI {
     // Use buttons and DoubleSuppliers to expose any inputs you want elsewhere
 
     /** Joystick used to control left side of drivetrain */
-    private static final Joystick leftJoystick = new Joystick(Ports.LEFT_STICK);
+    //private static final Joystick leftJoystick = new Joystick(Ports.LEFT_STICK);
     /** Joystick used to control right side of drivetrain */
-    private static final Joystick rightJoystick = new Joystick(Ports.RIGHT_STICK);
+    //private static final Joystick rightJoystick = new Joystick(Ports.RIGHT_STICK);
     /** Controller used to control drivetrain */
     private static final XboxController driverController = new XboxController(Ports.DRIVER_CONTROLLER);
 
@@ -58,7 +56,9 @@ public class OI {
 
     
     public static final JoystickButton exampleButton = new JoystickButton(driverController, OperatorButtons.EXAMPLE.value);
-
+    // driver intake outake buttons
+    public static final JoystickButton intakeButton = new JoystickButton(driverController, DriverButtons.INTAKE.value);
+    public static final JoystickButton outakeButton = new JoystickButton(driverController, DriverButtons.OUTAKE.value);
     // Suppliers for drive inputs
 
     /**
