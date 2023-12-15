@@ -50,7 +50,7 @@ public class DriveCommand extends CommandBase  {
 	@Override
 	public void execute() {
 		// Get values from the provided double suppliers
-		drivetrain.setOutput(leftSupplier.getAsDouble(), rightSupplier.getAsDouble());
+		drivetrain.setOutput(-leftSupplier.getAsDouble(), -rightSupplier.getAsDouble());
 	}
 
 	/**

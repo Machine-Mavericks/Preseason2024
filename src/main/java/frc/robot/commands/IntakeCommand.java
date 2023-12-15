@@ -21,11 +21,14 @@ public class IntakeCommand extends CommandBase {
   @Override
   public void initialize() {
     _intake.setMotorOutput(1);
+    System.out.println("STARTING");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    _intake.setMotorOutput(1);
+  }
 
   // Called once the command ends or is interrupted.
   @Override

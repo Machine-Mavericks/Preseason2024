@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
   private VictorSP IntakeMotor;
-  private final double OUTPUT = 0.7;
+  private final double OUTPUT = 0.3;
 
   /** Creates a new Intake. */
   public Intake(VictorSP _IntakeMotor) {
