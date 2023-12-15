@@ -27,6 +27,10 @@ public class OI {
 
     /** Buttons on the driver sticks/controller */
     private static class DriverButtons {
+        /** The one great button */
+        public static final JoystickButton intake_button = new JoystickButton(driverController, XboxController.Button.kY.value);
+
+
         
     }
 
@@ -52,9 +56,8 @@ public class OI {
     /** Controller used by operator */
     private static final XboxController operatorController = new XboxController(Ports.OPERATOR_CONTROLLER);
 
-    /** Button used as example */
-    public static final JoystickButton exampleButton = new JoystickButton(operatorController, OperatorButtons.EXAMPLE.value);
-
+    
+    public static final JoystickButton exampleButton = new JoystickButton(driverController, OperatorButtons.EXAMPLE.value);
 
     // Suppliers for drive inputs
 
