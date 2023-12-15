@@ -4,14 +4,20 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
-  /** Creates a new Intake. */
-  public Intake() {}
+  private VictorSP IntakeMotor;
 
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  /** Creates a new Intake. */
+  public Intake(VictorSP _IntakeMotor) {
+    IntakeMotor = _IntakeMotor;
   }
+
+  public void setMotorOutput(double speed){
+    IntakeMotor.set(speed);
+  }
+
+
 }

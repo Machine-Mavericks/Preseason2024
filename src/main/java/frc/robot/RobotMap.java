@@ -49,6 +49,9 @@ public class RobotMap {
         private static final int RIGHT_CONTROLLER_1 = 2;
         /** CAN ID of right talon 2. */
         private static final int RIGHT_CONTROLLER_2 = 3;
+
+        /*8 PWM Port for intake */
+        private static final int INTAKE_MOTOR = 4;
     }
 
     // We use the WPILib wrappers to get simulation support
@@ -67,12 +70,14 @@ public class RobotMap {
     /** Group with both right side drive controllers for simplicity */
     public static final MotorControllerGroup rightDriveControllers = new MotorControllerGroup(rightController1, rightController2);
 
+
+    public static final VictorSP intakeMotor = new VictorSP(RIO.INTAKE_MOTOR);
     /** Top Talon 1 */
-    public static final WPI_TalonSRX topTalon1 = new WPI_TalonSRX(CAN.TOP_TALON_1);
-    /** Top Talon 2 */
-    public static final WPI_TalonSRX topTalon2 = new WPI_TalonSRX(CAN.TOP_TALON_2);
-    /** Top Talon 3 */
-    public static final WPI_TalonSRX topTalon3 = new WPI_TalonSRX(CAN.TOP_TALON_3);
+    // public static final WPI_TalonSRX topTalon1 = new WPI_TalonSRX(CAN.TOP_TALON_1);
+    // /** Top Talon 2 */
+    // public static final WPI_TalonSRX topTalon2 = new WPI_TalonSRX(CAN.TOP_TALON_2);
+    // /** Top Talon 3 */
+    // public static final WPI_TalonSRX topTalon3 = new WPI_TalonSRX(CAN.TOP_TALON_3);
 
     // TODO: Uncomment the initializations below depending on what sensors your team wants
 
