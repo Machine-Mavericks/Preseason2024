@@ -5,16 +5,23 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
+import frc.robot.subsystems.Intake;
 
 public class OutakeCommand extends CommandBase {
+  private Intake _intake;
+
   /** Creates a new OutakeCommand. */
-  public OutakeCommand() {
+  public OutakeCommand(Intake intake) {
     // Use addRequirements() here to declare subsystem dependencies.
+    _intake = intake;
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    _intake.setMotorOutput(-1);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
@@ -22,7 +29,9 @@ public class OutakeCommand extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    _intake.setMotorOutput(0);
+  }
 
   // Returns true when the command should end.
   @Override

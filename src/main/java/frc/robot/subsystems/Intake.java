@@ -9,14 +9,19 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
   private VictorSP IntakeMotor;
+  private final double OUTPUT = 0.7;
 
   /** Creates a new Intake. */
   public Intake(VictorSP _IntakeMotor) {
     IntakeMotor = _IntakeMotor;
   }
 
-  public void setMotorOutput(double speed){
-    IntakeMotor.set(speed);
+  /**
+   * Sets motor to speedTrip value
+   * @param speedTrip -1, 0 or 1
+   */
+  public void setMotorOutput(int speedTrip){
+    IntakeMotor.set(speedTrip*OUTPUT);
   }
 
 
