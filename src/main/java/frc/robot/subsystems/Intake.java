@@ -17,7 +17,7 @@ public class Intake extends SubsystemBase {
   }
 
   /**
-   * Sets motor to speedTrip value
+   * Sets motor to constant speed value multiplied by speedTrip value
    * @param speedTrip -1, 0 or 1
    */
   public void setMotorOutput(int speedTrip){
